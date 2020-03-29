@@ -12,3 +12,6 @@ case object Wednesday extends Weekday
 case object Thursday extends Weekday
 case object Friday extends Weekday
 case object Saturday extends Weekday
+
+// そのアリティはそれを構成するタイプのアリティの合計に
+// 等しいため、合計タイプと呼ばれます。
