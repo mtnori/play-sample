@@ -7,6 +7,8 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.13.1"
 
+val circeVersion = "0.13.0"
+
 libraryDependencies += guice
 libraryDependencies += jdbc
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test
@@ -20,6 +22,12 @@ libraryDependencies ++= Seq(
   "com.kenshoo" %% "metrics-play" % "2.7.3_0.8.2",
   "org.scalikejdbc" %% "scalikejdbc-test" % "3.4.1" % Test
 )
+
+libraryDependencies ++= Seq(
+  "io.circe" %% "circe-core",
+  "io.circe" %% "circe-generic",
+  "io.circe" %% "circe-parser"
+).map(_ % circeVersion)
 
 enablePlugins(ScalikejdbcPlugin)
 
